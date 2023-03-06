@@ -2,35 +2,25 @@
 {
     private static void Main(string[] args)
     {
-        int numero, fatorial, temp;
-        Console.WriteLine("Informe um número...");
-        numero = int.Parse(Console.ReadLine());
-        fatorial = 1;
+        int num, resposta;
 
-        if (numero == 0)
-        {
-            fatorial = 1;
-        }
+        Console.WriteLine("Informe um valor: ");
+        num = int.Parse(Console.ReadLine());
 
-        else
+        resposta = fat(num);
+        Console.WriteLine("O fatorial de " + num + " é: " + resposta);
+
+        int fat(int valor)
         {
-            for (int i = 1; i < numero; i++)
+            if (valor == 0)
             {
-                temp = numero - i;
-                fatorial *= temp;
-
+                return 1;
             }
-
-            fatorial = fatorial * numero;
+            else
+            {
+                return (valor * fat(valor-1));
+            }
         }
-
-        
-
-        
-
-        Console.WriteLine("o fatorial de " + numero + " é " + fatorial);
-
-        Console.ReadKey();
 
 
 
